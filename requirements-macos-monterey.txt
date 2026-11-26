@@ -1,0 +1,33 @@
+# Dependencias para macOS Monterey 12.7.x en Mac Intel (x86_64).
+# Python recomendado: 3.12.x.
+# PySide6 6.8.3 / Qt 6.8: línea candidata para validar en Monterey.
+# pyodbc se omite: el importador .prs en macOS usa mdbtools.
+PySide6==6.8.3
+openpyxl>=3.1.0
+xlrd>=2.0.0
+reportlab>=4.0.0
+python-docx>=1.1.0
+pdfplumber>=0.10.0
+anthropic>=0.25.0
+werkzeug>=3.0.0
+groq>=1.2.0
+google-genai>=1.0.0
+openai>=1.0.0
+rapidfuzz>=3.0.0
+odfpy>=1.4.1
+pypdf>=4.0.0
+pyinstaller>=6.0.0
+Pillow>=10.0.0
+cryptography>=42.0.0
+# pyodbc omitido en macOS; no se usa en la ruta darwin.
+access-parser>=0.0.6
+# RAG Fase 2 — recuperación semántica de partidas (embeddings estáticos, sin
+# PyTorch). Trae tokenizers/safetensors/huggingface_hub. El MODELO (~147 MB) NO
+# es pip: se baja de R2 al build (gitignored). scikit-learn NO se incluye (solo
+# se usó para PREPARAR el modelo reducido, no en runtime).
+model2vec>=0.8.0
+# Geometría del visor BIM (views/bim_visor.py). Opcional en ejecución: si falta,
+# la app funciona y el visor lo explica. Wheels para Windows, macOS (arm64 y
+# x86_64) y manylinux, Python 3.10 a 3.15.
+ifcopenshell>=0.9.0
+numpy>=2.0
